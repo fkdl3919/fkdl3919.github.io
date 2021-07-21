@@ -16,11 +16,10 @@ tabs:
   archives: Archives
   about: About
 
-# the text displayed in the search bar & search results
+# text displayed in the search bar
 search:
   hint: search
   cancel: Cancel
-  no_results: Oops! No result founds.
 
 panel:
   lastmod: Recent Update
@@ -62,9 +61,9 @@ post:
   published: 'on'
   updated: Updated
   timeago:
-    day: days ago
-    hour: hours ago
-    minute: minutes ago
+    day: d ago
+    hour: hr ago
+    minute: min ago
     just_now: just now
   words: words
   pageview_measure: views
@@ -76,9 +75,7 @@ post:
   button:
     next: Newer
     previous: Older
-    copy_code:
-      succeed: Copied!
-    share_link:
+    copy:
       title: Copy link
       succeed: Link copied successfully!
   # pinned prompt of posts list on homepage
