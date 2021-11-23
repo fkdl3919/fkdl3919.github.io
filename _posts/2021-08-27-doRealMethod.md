@@ -85,7 +85,7 @@ class StudyServiceTest {
     @Mock Study mockStudy;
 
     @Test
-    void createDoRealMethodTest(){
+    void createDoRealMethodTest( ){
         Mockito.doCallRealMethod().when(mockStudy).doRealMethodTest();
         mockStudy.doRealMethodTest();
     }
