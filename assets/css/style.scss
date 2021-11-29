@@ -234,8 +234,8 @@ body{
 .post h1 {
   margin-top: 3rem;
   margin-bottom: 1rem;
-  font-size: 2.5rem;
-  border-bottom: 1px solid #ededed;
+  font-size: 2.2rem;
+  // border-bottom: 1px solid #ededed;
 }
 
 .post-content{
@@ -243,17 +243,20 @@ body{
 }
 
 #post-wrapper h2{
-  font-size: 1.9rem;
+  font-size: 1.7rem;
   font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 #post-wrapper h3{
-  font-size: 1.49rem;
+  font-size: 1.29rem;
 }
 #post-wrapper h4{
-  font-size: 1.12rem;
+  font-size: 1.1rem;
 }
 
-
+hr{
+  margin-top: 0px;
+}
 
 .post em{
   font-size: 0.85rem;
@@ -278,6 +281,6 @@ blockquote {
 
 @media all and (max-width: 576px)  {
   #post-wrapper h1{
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 }
