@@ -1,7 +1,7 @@
 ---
 title: doRealMethod
 date: 2021-08-27 02:00:00 +0900
-categories: [Language, Java]
+categories: [Java, Junit]
 tags: [Mock, Junit, Java]
 ---
 
@@ -11,7 +11,7 @@ Mockito 프레임워크가 제공하는 Stub 기반의 테스트 방법 중
 
 를 알아보겠습니다.
 
-### doRealMethod() 란?
+## doRealMethod() 란?
 
 _Mock 실행 객체 참조를 사용하여 메서드를 참조할 때 java는 해당 메서드에 대한 호출을 전혀 하지 않으며, 지정된 값이 없으면 모의 실행 값을 반환하거나 null을 찾습니다. 하지만 만약 우리가 그것을 재정의하고 java가 모의 객체 참조를 사용하여 실제 메소드를 호출하기를 원한다면, 이 메소드를 사용할 수 있습니다._
 
