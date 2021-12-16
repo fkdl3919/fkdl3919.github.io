@@ -273,7 +273,7 @@ MapperScannerConfigurer을 bean으로 등록해주는 방법으로도 mapper들�
 
 > Github source
 >
-> - [https://github.com/fkdl3010/java-and-spring/tree/main/1_java/optional](https://github.com/fkdl3010/java-and-spring/tree/main/1_java/optional)
+> - [https://github.com/fkdl3010/java-and-spring/tree/main/5_mybatis/injectMapper](https://github.com/fkdl3010/java-and-spring/tree/main/5_mybatis/injectMapper)
 >
 > references
 >
