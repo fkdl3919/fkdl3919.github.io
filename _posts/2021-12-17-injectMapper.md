@@ -1,18 +1,38 @@
 ---
-title: [MyBatis] Mapper등록
+title: (MyBatis) Mapper등록
 date: 2021-12-17 00:00:00 +0900
 categories: [Java, MyBatis]
 tags: [Java, MyBatis]
 ---
 
-## Mapper 등록하기
+mybatis-spring 프레임워크를 사용할 때 mapper를 springContext에 주입하는 방법으로 크게 2가지가 있습니다
+
+1. Mapper 수동 등록
+2. Mapper 스캔을 이용한 자동 등록
+
+두가지 방법을 알아보겠습니다.
+
+> 목차
+
+- [Mapper 수동 등록하기](#mapper-수동-등록하기)
+  - [XML설정 사용](#xml설정-사용)
+- [Mapper 스캔](#mapper-스캔)
+  - [I. mybatis:scan 엘리먼트 사용](#i-mybatisscan-엘리먼트-사용)
+    - [base-package](#base-package)
+    - [annotation](#annotation)
+    - [marker-interface](#marker-interface)
+  - [II. 스프링 XML파일을 사용해서 `MapperScannerConfigurer`를 등록](#ii-스프링-xml파일을-사용해서mapperscannerconfigurer를-등록)
+
+## Mapper 수동 등록하기
+
+---
 
 1. **XML설정 사용**
 2. **자바설정 사용**
 
-이 게시물에서는 XML을 이용한 Mapper 등록을 알아보겠습니다.
+Mapper 수동등록은 XML을 이용한 Mapper 등록을 알아보겠습니다.
 
-### **XML설정 사용**
+### XML설정 사용
 
 매퍼는 다음처럼 XML설정파일에 `MapperFactoryBean`을 두는 것으로 스프링에 등록됩니다.
 
@@ -24,7 +44,9 @@ tags: [Java, MyBatis]
 </bean>
 ```
 
-## Mapper스캔
+## Mapper 스캔
+
+---
 
 Mybatis는 스프링과 같이 사용 할 때 Dao(Mapper) 를 빈에 주입할 수 있는 다양한 방법을 제공합니다.
 
@@ -34,7 +56,7 @@ Mybatis는 스프링과 같이 사용 할 때 Dao(Mapper) 를 빈에 주입할 �
 
 2번 방법은 1번방법과 xml방식 클래스방식의 차이만 있을 뿐 같은 기능이기 때문에 따로 다루지 않겠습니다.
 
-## 1. <mybatis:scan/> 엘리먼트 사용
+### I. mybatis:scan 엘리먼트 사용
 
 기본적으로 제일 편리하고 사용하기 쉬운 방법입니다.
 
@@ -58,7 +80,7 @@ Mybatis는 스프링과 같이 사용 할 때 Dao(Mapper) 를 빈에 주입할 �
 
 를 알아보겠습니다.
 
-### base-package
+#### base-package
 
 mapper를 주입시켜줄 package를 지정합니다.
 
@@ -68,7 +90,7 @@ mapper를 주입시켜줄 package를 지정합니다.
 
 해당 패키지에 아래에 있는 모든 interface들을 mapper로 등록해 줍니다.
 
-### annotation
+#### annotation
 
 mapper를 검색할 annotation을 등록할 수 있습니다.
 
@@ -130,7 +152,7 @@ public void mapperInjectTest(){
 
 예상대로 어노테이션이 입력되지 않은 mapper가 context에 등록되지 않아 NoSuchBeanDefinitionException 을 발생시키는 걸 볼 수 있습니다.
 
-### marker-interface
+#### marker-interface
 
 `marker-interface` 프로퍼티는 검색할 상위 인터페이스를 지정할 수 있습니다.
 
@@ -169,7 +191,7 @@ public interface MyBatisMapper extends BaseGilMapper {
 </mapper>
 ```
 
-1. **테스트 코드**
+**테스트 코드**
 
 ```java
 @Test
@@ -197,7 +219,7 @@ public void mapperInjectTest(){
 
 저는 `marker-interface` 를 이용한 상속 방법이 과연 xml매퍼 파일로 등록된 쿼리문을 실행시킬 수 있을지 궁금하였습니다.
 
-1. **테스트 코드**
+**테스트 코드**
 
 `marker-interface`를 상속받은 MyBatisMapper의 `requestUser` 메소드를 실행하는 service 클래스입니다.
 
@@ -236,7 +258,7 @@ public void userSelectTest(){
 
 `marker-interface` 를 상속받은 메소드도 xml매퍼 파일에 접근이 가능하다는걸 볼 수 있습니다.
 
-## 2. 스프링 XML파일을 사용해서 `MapperScannerConfigurer`를 등록
+### II. 스프링 XML파일을 사용해서 `MapperScannerConfigurer`를 등록
 
 ```xml
 <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
@@ -255,5 +277,5 @@ MapperScannerConfigurer을 bean으로 등록해주는 방법으로도 mapper들�
 >
 > references
 >
-> - [https://mybatis.org/spring/ko/mappers.html](mybatis-spring 공식홈페이지)
+> - [mybatis-spring 공식홈페이지](https://mybatis.org/spring/ko/mappers.html)
 > - [https://okky.kr/article/448042](https://okky.kr/article/448042)
