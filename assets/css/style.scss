@@ -256,6 +256,7 @@ body{
 
 hr{
   margin-top: 0px;
+  border-top: 1px solid #0000000f
 }
 
 .post em{
@@ -283,4 +284,8 @@ blockquote {
   #post-wrapper h1{
     font-size: 2.2rem;
   }
+}
+
+.end-line{
+  margin-top: 6rem;
 }
