@@ -1,18 +1,13 @@
 ---
 ---
 
-/*
-  If the number of TAB files has changed, the following variable is required.
-  And it must be defined before `@import`.
-*/
-$tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
-
-@import "{{ site.theme }}";
+@use 'main
+{%- if jekyll.environment == ' production ' -%}
+  .bundle
+{%- endif -%}
+';
 
 /* append your custom style below */
-
-
-/*! tomorrow night eighties; https://github.com/MozMorris/tomorrow-pygments */
 .highlight,
 .highlight pre,
 .highlight table {
@@ -216,19 +211,19 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
   color: #f99157 !important;
 } /* Literal.Number.Integer.Long */
 
-#sidebar{
-  border-right: 1px solid rgba(0,0,0,0.07);
-  background: #ffffff;
-}
+// #sidebar {
+//   border-right: 1px solid rgba(0, 0, 0, 0.07);
+//   background: #ffffff;
+// }
 
-.post-content a:not(.img-link):hover{
+.post-content a:not(.img-link):hover {
   transition-property: all;
   transition-timing-function: ease;
   transition-duration: 0.3s;
 }
 
-body{
-  font-family: "PT Sans",sans-serif;
+body {
+  font-family: 'PT Sans', sans-serif;
 }
 
 .post h1 {
@@ -238,29 +233,29 @@ body{
   // border-bottom: 1px solid #ededed;
 }
 
-.post-content{
+.post-content {
   font-size: 0.92rem;
 }
 
-#post-wrapper h2{
+#post-wrapper h2 {
   font-size: 1.7rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
 }
-#post-wrapper h3{
+#post-wrapper h3 {
   font-size: 1.29rem;
 }
-#post-wrapper h4{
+#post-wrapper h4 {
   font-size: 1.1rem;
   font-weight: 600;
 }
 
-hr{
+hr {
   margin-top: 0px;
-  border-top: 1px solid #0000000f
+  border-top: 1px solid #0000000f;
 }
 
-.post em{
+.post em {
   font-size: 0.85rem;
 }
 
@@ -270,30 +265,29 @@ blockquote {
   color: #000000;
 }
 
-#post-list .post-preview a:hover{
+#post-list .post-preview a:hover {
   transition-property: all;
   transition-timing-function: ease;
   transition-duration: 0.2s;
 }
 
-#post-list .post-preview h1{
+#post-list .post-preview h1 {
   border-bottom: none;
 }
 
-
-@media all and (max-width: 576px)  {
-  #post-wrapper h1{
+@media all and (max-width: 576px) {
+  #post-wrapper h1 {
     font-size: 2.2rem;
   }
 }
 
-.end-line{
+.end-line {
   margin-top: 6rem;
 }
 
-.post-tail-wrapper{
+.post-tail-wrapper {
   margin-top: 3rem;
 }
 .pt-5 {
-  padding-top: 0rem!important;
+  padding-top: 0rem !important;
 }
