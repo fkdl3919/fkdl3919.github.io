@@ -2,8 +2,8 @@
 ---
 
 @use 'main
-{%- if jekyll.environment == ' production ' -%}
-  .bundle
+{%- if jekyll.environment == 'production' -%}
+.bundle
 {%- endif -%}
 ';
 
